@@ -1,0 +1,10 @@
+^C:\DEV\RUST\SPARKY\TESTBED\TARGET\DEBUG\BUILD\GLFW-SYS-8943DB095CAE6D8E\OUT\BUILD\CMAKEFILES\C2E7C74FE9250C059D350070FE730C38\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/The Internet/.cargo/registry/src/github.com-1ecc6299db9ec823/glfw-sys-4.0.0+3.3.5" -BC:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/build/GLFW.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
