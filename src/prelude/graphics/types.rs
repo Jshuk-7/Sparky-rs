@@ -93,7 +93,7 @@ pub enum Color {
 }
 
 impl Color {
-    pub fn color(&self) -> [f32;3] {
+    pub fn color(&self) -> [f32; 3] {
         use Color as C;
 
         match self {
@@ -110,6 +110,21 @@ impl Color {
             C::Gray => [0.2, 0.2, 0.2],
             C::Black => [0.0, 0.0, 0.0],
             C::White => [1.0, 1.0, 1.0],
+        }
+    }
+}
+
+#[derive(PartialEq)]
+pub enum ShaderType {
+    Vert,
+    Frag,
+}
+
+impl ShaderType {
+    pub fn shader_type(&self) -> u32 {
+        match self {
+            ShaderType::Vert => gl::VERTEX_SHADER,
+            ShaderType::Frag => gl::FRAGMENT_SHADER,
         }
     }
 }

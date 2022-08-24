@@ -1,7 +1,7 @@
 use sparky::prelude::{algebra::*, graphics::types::*, *};
 
 fn main() {
-    log::init();
+    logger::init();
 
     let mut window = Window::new(Vec2::new(800.0, 600.0), "Sparky Game Engine");
 
@@ -28,8 +28,11 @@ fn main() {
     );
     pos_attr.enable();
 
+    let shader = Shader::new("shaders/vs.glsl", "shaders/fs.glsl");
+    shader.enable();
+
     let mut renderer = Renderer::new();
-    renderer.set_clear_color(&Color::White);
+    renderer.set_clear_color(&Color::LightBlue);
 
     let game = GameLoop::new(&mut window, &mut renderer);
 

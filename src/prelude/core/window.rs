@@ -4,8 +4,6 @@ use glfw::{Action, Context, Key, WindowEvent};
 
 use std::sync::mpsc::Receiver;
 
-pub use gl;
-
 #[allow(dead_code)]
 const OPENGL_MAJOR_WINDOWS: u32 = 4;
 #[allow(dead_code)]

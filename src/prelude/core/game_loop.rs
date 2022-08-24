@@ -1,5 +1,7 @@
 use super::{super::Renderer, Error, Window};
 
+pub type GameResult = Result<(), Error>;
+
 /// The core of the engine. Uses a Window and Renderer to start the game.
 /// 
 /// ## Usage
@@ -40,9 +42,9 @@ impl<'a> GameLoop<'a> {
     ///     //game code goes here...
     /// }).unwrap();
     /// ```
-    pub fn on_update<F>(self, mut func: F) -> Result<(), Error>
+    pub fn on_update<F>(self, mut func: F) -> GameResult
     where
-        F: FnMut(&mut Renderer) -> Result<(), Error>,
+        F: FnMut(&mut Renderer) -> GameResult,
     {
         'game_loop: loop {
             if self.window.closed() {
