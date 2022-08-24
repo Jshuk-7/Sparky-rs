@@ -1,8 +1,0 @@
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/glfw3.lib
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3.h
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3native.h
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3Config.cmake
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3ConfigVersion.cmake
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3Targets.cmake
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3Targets-debug.cmake
-C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/pkgconfig/glfw3.pc

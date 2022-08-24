@@ -1,7 +1,0 @@
-/.vscode
-/target
-/Cargo.lock
-
-/testbed/.vscode
-/testbed/target
-/testbed/Cargo.lock
