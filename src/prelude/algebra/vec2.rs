@@ -11,8 +11,6 @@ impl<T> Vec2<T> {
     }
 }
 
-
-
 impl<T> Add for Vec2<T>
 where
     T: Add<Output = T>,

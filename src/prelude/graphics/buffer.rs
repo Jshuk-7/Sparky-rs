@@ -11,22 +11,23 @@ pub struct Buffer {
 }
 
 impl Buffer {
-    pub fn new(_type: BufferType, usage_: FillType) -> Self {
+    pub fn new(ty: BufferType, usage: BufferUsage) -> Self {
         let mut id = 0;
 
         unsafe { gl::GenBuffers(1, &mut id) }
 
-        let type_: GLuint = match _type {
+        let type_: GLuint = match ty {
             BufferType::Vertex => gl::ARRAY_BUFFER,
             BufferType::Index => gl::ELEMENT_ARRAY_BUFFER,
         };
 
-        let usage: GLuint = match usage_ {
-            FillType::Single => gl::STATIC_DRAW,
-            FillType::Multi => gl::DYNAMIC_DRAW,
+        let buffer_usage: GLuint = match usage {
+            BufferUsage::Default => gl::STATIC_DRAW,
+            BufferUsage::Single => gl::STATIC_DRAW,
+            BufferUsage::Multi => gl::DYNAMIC_DRAW,
         };
 
-        Self { id, type_, usage }
+        Self { id, type_, usage: buffer_usage }
     }
 
     pub fn bind(&self) {

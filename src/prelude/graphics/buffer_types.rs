@@ -1,8 +1,10 @@
+/// Gpu buffer types
 pub enum BufferType {
     Vertex,
     Index,
 }
 
+/// Gpu buffer data types
 pub enum BufferDataType {
     UByte,
     Uint16,
@@ -13,7 +15,9 @@ pub enum BufferDataType {
     Float32,
 }
 
-pub enum FillType {
+/// Gpu buffer usage type, choosing the incorrect type will result in a decrease in performance 
+pub enum BufferUsage {
+    Default,
     Single,
     Multi,
 }

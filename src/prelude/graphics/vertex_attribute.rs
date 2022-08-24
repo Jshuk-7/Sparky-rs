@@ -12,12 +12,12 @@ impl VertexAttribute {
     pub fn new(
         index: u32,
         size: i32,
-        type_: BufferDataType,
+        ty: BufferDataType,
         normalized: bool,
         stride: usize,
         ptr: *const c_void,
     ) -> Self {
-        let new_type = match type_ {
+        let type_ = match ty {
             BufferDataType::UByte => gl::UNSIGNED_BYTE,
             BufferDataType::Uint16 => gl::UNSIGNED_SHORT,
             BufferDataType::Uint32 => gl::UNSIGNED_INT,
@@ -30,7 +30,7 @@ impl VertexAttribute {
         let is_normalized: GLboolean = if normalized { gl::TRUE } else { gl::FALSE };
 
         unsafe {
-            gl::VertexAttribPointer(index, size, new_type, is_normalized, stride as GLsizei, ptr)
+            gl::VertexAttribPointer(index, size, type_, is_normalized, stride as GLsizei, ptr)
         }
 
         Self { index }

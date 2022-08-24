@@ -11,6 +11,16 @@ pub struct Window {
 }
 
 impl Window {
+    /// Creates a new window
+    /// 
+    /// ## Arguments
+    /// - 'size' - The size of the window.
+    /// - 'title' - The title of the application.
+    /// 
+    /// ## Example
+    /// ```
+    /// let window = Window::new(Vec2::new(640.0, 480.0), "Hello World!");
+    /// ```
     pub fn new(size: Vec2, title: &str) -> Self {
         let mut glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
         glfw.window_hint(glfw::WindowHint::ContextVersion(4, 6));
@@ -36,7 +46,7 @@ impl Window {
 
     /// Returns true or false depending on if the window is closed or not
     ///
-    /// ### EXAMPLE
+    /// ## Example
     /// ```
     /// while !window.closed() {
     /// 	//...insert code here
@@ -46,7 +56,12 @@ impl Window {
         self.window_handle.should_close()
     }
 
-    /// Updates input and events then swaps frame buffers
+    /// Processes input and events, such as key presses, mouse movements, window resizes etc...
+    /// 
+    /// ## Example
+    /// ```
+    /// window.update();
+    /// ```
     pub fn update(&mut self) {
         self.handle_events();
         self.glfw.poll_events();

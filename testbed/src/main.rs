@@ -1,6 +1,6 @@
-use sparky::prelude::{buffer_types::*, math::*, *};
+use sparky::{core, prelude::{buffer_types::*, math::*, *}};
 
-use std::{mem::size_of, ops::Add, ptr};
+use std::{mem::size_of, ptr};
 
 fn main() {
     let mut window = Window::new(Vec2::new(800.0, 600.0), "Sparky Game Engine");
@@ -14,7 +14,7 @@ fn main() {
     let vao = Vao::new();
     vao.bind();
 
-    let vbo = Buffer::new(BufferType::Vertex, FillType::Single);
+    let vbo = Buffer::new(BufferType::Vertex, BufferUsage::Single);
     vbo.store_data(&vertices);
 
     let pos_attr = VertexAttribute::new(
@@ -27,12 +27,17 @@ fn main() {
     );
     pos_attr.enable();
 
-    let renderer = Renderer::new();
+    let mut renderer = Renderer::new();
     renderer.set_clear_color(&[0.2, 0.2, 0.8]);
 
-    while !window.closed() {
+    let game = core::GameLoop(&mut window, &mut renderer);
+
+    game.run(move |window, renderer| {
         renderer.clear_viewport();
         //renderer.draw(Primitive::Triangle, 0, 3);
         window.update();
-    }
+
+        Ok(())
+    })
+    .expect("Failed to run Game!");
 }
