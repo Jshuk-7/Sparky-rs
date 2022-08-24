@@ -1,7 +1,7 @@
-pub mod buffer;
+mod buffer;
 pub mod buffer_types;
-pub mod vertex_array;
-pub mod vertex_attribute;
+mod vertex_array;
+mod vertex_attribute;
 
 pub use buffer::*;
 pub use vertex_array::*;
@@ -35,8 +35,6 @@ impl Renderer {
             Primitive::Point => gl::POINTS,
         };
 
-        if gl::DrawArrays::is_loaded() {
-            unsafe { gl::DrawArrays(primitive, first as i32, count as i32) }
-        }
+        unsafe { gl::DrawArrays(primitive, first as i32, count as i32) }
     }
 }

@@ -1,3 +1,5 @@
+use super::algebra::Vec2;
+
 use glfw::{Action, Context, Key, WindowEvent};
 
 use std::sync::mpsc::Receiver;
@@ -9,20 +11,19 @@ pub struct Window {
 }
 
 impl Window {
-    pub fn new(width: u16, height: u16, title: &str) -> Self {
-        let glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
+    pub fn new(size: Vec2, title: &str) -> Self {
+        let mut glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
+        glfw.window_hint(glfw::WindowHint::ContextVersion(4, 6));
+        glfw.window_hint(glfw::WindowHint::OpenGlProfile(glfw::OpenGlProfileHint::Core));
 
         let (mut window, events) = glfw
             .create_window(
-                width.into(),
-                height.into(),
+                size.x as u32,
+                size.y as u32,
                 title,
                 glfw::WindowMode::Windowed,
             )
             .expect("Failed to create Window!");
-
-        window.set_framebuffer_size_polling(true);
-        window.set_key_polling(true);
 
         Self::init_graphics_api(&mut window);
 
@@ -54,6 +55,8 @@ impl Window {
 
     fn init_graphics_api(window_handle: &mut glfw::Window) {
         window_handle.make_current();
+        window_handle.set_framebuffer_size_polling(true);
+        window_handle.set_key_polling(true);
         gl::load_with(|s| window_handle.get_proc_address(s) as *const _);
     }
 
@@ -77,12 +80,12 @@ impl Window {
                 WindowEvent::Key(Key::Escape, _, Action::Press, _) => {
                     self.window_handle.set_should_close(true)
                 }
+                WindowEvent::Key(..) => (),
                 WindowEvent::Char(_) => (),
                 WindowEvent::CharModifiers(_, _) => (),
                 WindowEvent::FileDrop(_) => (),
                 WindowEvent::Maximize(_) => (),
                 WindowEvent::ContentScale(_, _) => (),
-                _ => (),
             }
         }
     }
