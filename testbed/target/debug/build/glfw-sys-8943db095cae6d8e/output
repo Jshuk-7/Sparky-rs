@@ -55,9 +55,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Building Custom Rule C:/Users/The Internet/.cargo/registry/src/github.com-1ecc6299db9ec823/glfw-sys-4.0.0+3.3.5/CMakeLists.txt
   -- Install configuration: "Debug"
   -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/glfw3.lib
-  -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW
-  -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3.h
-  -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3native.h
+  -- Up-to-date: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW
+  -- Up-to-date: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3.h
+  -- Up-to-date: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/include/GLFW/glfw3native.h
   -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3Config.cmake
   -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3ConfigVersion.cmake
   -- Installing: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/lib/cmake/glfw3/glfw3Targets.cmake

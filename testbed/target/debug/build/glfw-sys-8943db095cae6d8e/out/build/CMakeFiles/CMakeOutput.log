@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 8/23/2022 4:57:19 PM.
+Build started 8/24/2022 12:00:05 PM.
 Project "C:\dev\Rust\sparky\testbed\target\debug\build\glfw-sys-8943db095cae6d8e\out\build\CMakeFiles\3.23.1\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -35,7 +35,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.74
+Time Elapsed 00:00:00.64
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -47,11 +47,11 @@ The C compiler identification is MSVC, found in "C:/dev/Rust/sparky/testbed/targ
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/dev/Rust/sparky/testbed/target/debug/build/glfw-sys-8943db095cae6d8e/out/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_4c7ee.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_774b9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   CMakeCCompilerABI.c
-  cmTC_4c7ee.vcxproj -> C:\dev\Rust\sparky\testbed\target\debug\build\glfw-sys-8943db095cae6d8e\out\build\CMakeFiles\CMakeTmp\Debug\cmTC_4c7ee.exe
+  cmTC_774b9.vcxproj -> C:\dev\Rust\sparky\testbed\target\debug\build\glfw-sys-8943db095cae6d8e\out\build\CMakeFiles\CMakeTmp\Debug\cmTC_774b9.exe
 
 
 

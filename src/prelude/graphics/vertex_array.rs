@@ -1,5 +1,6 @@
 use gl::types::*;
 
+/// Vertex Array Object, an opengl state object that holds the currently bound buffers and shaders
 pub struct Vao {
     id: GLuint,
 }
@@ -20,6 +21,8 @@ impl Vao {
     }
 
     /// Binds a vao in the opengl state machine.
+    /// 
+    /// ## Usage
     /// A vao must be bound before submiting data to a buffer, or making a draw call
     ///
     /// ## Example
@@ -32,13 +35,15 @@ impl Vao {
     }
 
     /// Unbinds a vao in the opengl state machine.
+    /// 
+    /// ## Usage
     /// A vao should be unbound before binding another,</br>
     /// however it is not absolutely neccessary in performance critical scenarios
     ///
     /// ## Example
     /// ```
-    /// loop {
-    ///     //game loop...
+    /// 'game_loop: loop {
+    ///     //game code...
     /// }
     ///
     /// //cleanup
