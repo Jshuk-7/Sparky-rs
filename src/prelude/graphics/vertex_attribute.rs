@@ -4,6 +4,8 @@ use gl::types::*;
 
 use std::os::raw::*;
 
+pub type CVoidPtr = *const std::ffi::c_void;
+
 /// A description of a vertex buffer attribute.</br>
 ///
 /// ## Usage
@@ -33,12 +35,12 @@ impl VertexAttribute {
     ///     BufferDataType::Float32,
     ///     false,
     ///     std::mem::size_of::<Vec3>,
-    ///     std::ptr::null
+    ///     std::ptr::null()
     /// );
     /// ```
     pub fn new(
         index: u32,
-        size: i32,
+        size: usize,
         ty: BufferDataType,
         normalized: bool,
         byte_stride: usize,
@@ -50,7 +52,7 @@ impl VertexAttribute {
 
         let stride_ = byte_stride as GLsizei;
 
-        unsafe { gl::VertexAttribPointer(index, size, type_, is_normalized, stride_, ptr) }
+        unsafe { gl::VertexAttribPointer(index, size as i32, type_, is_normalized, stride_, ptr) }
 
         Self { index }
     }
