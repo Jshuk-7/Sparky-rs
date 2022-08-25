@@ -5,4 +5,6 @@ use thiserror::Error;
 pub enum Error {
     #[error("This is a test error for the Sparky Game Engine")]
     Test,
+    #[error("")]
+    Overflow,
 }

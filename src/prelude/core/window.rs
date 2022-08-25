@@ -110,32 +110,32 @@ impl Window {
 
     fn handle_events(&mut self) {
         for (_, event) in glfw::flush_messages(&self.events) {
-            use WindowEvent as WndE;
+            use WindowEvent as WndEvnt;
 
             match event {
-                WndE::Pos(_, _) => (),
-                WndE::Size(_, _) => (),
-                WndE::Close => (),
-                WndE::Refresh => (),
-                WndE::Focus(_) => (),
-                WndE::Iconify(_) => (),
-                WndE::FramebufferSize(width, height) => {
+                WndEvnt::Pos(_, _) => (),
+                WndEvnt::Size(_, _) => (),
+                WndEvnt::Close => (),
+                WndEvnt::Refresh => (),
+                WndEvnt::Focus(_) => (),
+                WndEvnt::Iconify(_) => (),
+                WndEvnt::FramebufferSize(width, height) => {
                     // Make sure the viewport matches the resized window dimensions
                     unsafe { gl::Viewport(0, 0, width, height) }
                 }
-                WndE::MouseButton(_, _, _) => (),
-                WndE::CursorPos(_, _) => (),
-                WndE::CursorEnter(_) => (),
-                WndE::Scroll(_, _) => (),
-                WndE::Key(Key::Escape, _, Action::Press, _) => {
+                WndEvnt::MouseButton(_, _, _) => (),
+                WndEvnt::CursorPos(_, _) => (),
+                WndEvnt::CursorEnter(_) => (),
+                WndEvnt::Scroll(_, _) => (),
+                WndEvnt::Key(Key::Escape, _, Action::Press, _) => {
                     self.window_handle.set_should_close(true)
                 }
-                WndE::Key(..) => (),
-                WndE::Char(_) => (),
-                WndE::CharModifiers(_, _) => (),
-                WndE::FileDrop(_) => (),
-                WndE::Maximize(_) => (),
-                WndE::ContentScale(_, _) => (),
+                WndEvnt::Key(..) => (),
+                WndEvnt::Char(_) => (),
+                WndEvnt::CharModifiers(_, _) => (),
+                WndEvnt::FileDrop(_) => (),
+                WndEvnt::Maximize(_) => (),
+                WndEvnt::ContentScale(_, _) => (),
             }
         }
     }

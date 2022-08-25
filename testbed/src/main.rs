@@ -1,5 +1,7 @@
 use sparky::prelude::{algebra::*, graphics::types::*, *};
 
+use std::{mem, ptr};
+
 fn main() {
     logger::init();
 
@@ -28,8 +30,8 @@ fn main() {
         3,
         BufferDataType::Float32,
         false,
-        std::mem::size_of::<Vec3>() * 2,
-        std::ptr::null(),
+        mem::size_of::<Vec3>() * 2,
+        ptr::null(),
     );
     pos_attr.enable();
 
@@ -38,8 +40,8 @@ fn main() {
         3,
         BufferDataType::Float32,
         false,
-        std::mem::size_of::<Vec3>() * 2,
-        std::mem::size_of::<Vec3>() as CVoidPtr,
+        mem::size_of::<Vec3>() * 2,
+        mem::size_of::<Vec3>() as CVoidPtr,
     );
     color_attr.enable();
 
